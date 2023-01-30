@@ -1,0 +1,13 @@
+CREATE DATABASE project_monitoring;
+
+USE project_monitoring;
+
+CREATE TABLE projects (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  leader VARCHAR(255) NOT NULL,
+  start_date DATE NOT NULL,
+  end_date DATE NOT NULL,
+  client VARCHAR(255) NOT NULL,
+  progress VARCHAR(255) NOT NULL
+);
