@@ -1,0 +1,20 @@
+<?php
+  include 'koneksi.php';
+
+  if (isset($_POST['submit'])) {
+    $title = $_POST['title'];
+    $leader = $_POST['leader'];
+    $start_date = $_POST['start_date'];
+    $end_date = $_POST['end_date'];
+    $client = $_POST['client'];
+    $progress = $_POST['progress'];
+
+    $sql = "INSERT INTO projects (title, leader, start_date, end_date, client, progress)
+    VALUES ('$title', '$leader', '$start_date', '$end_date', '$client', '$progress')";
+    if (mysqli_query($conn, $sql)) {
+      header("Location: index.php");
+    } else {
+      echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+  }
+?>
